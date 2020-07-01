@@ -82,6 +82,7 @@ void Lista<Dato>::insertar(Dato d)
     primero = nuevo;
     tam++;
 }
+
 template < typename Dato >
 Dato Lista<Dato>::obtener_dato(unsigned pos)
 {
@@ -94,6 +95,7 @@ Dato Lista<Dato>::obtener_dato(unsigned pos)
     }
     return 0;
 }
+
 template < typename Dato >
 unsigned Lista<Dato>::obtener_tamanio()
 {

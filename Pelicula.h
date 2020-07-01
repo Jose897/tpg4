@@ -13,6 +13,7 @@ class Pelicula{
         string nombre;
         float valoracion;
         int recaudacion;
+
     public:
         Pelicula();
         Pelicula(string direc, string nom, float val, int rec);

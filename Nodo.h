@@ -1,5 +1,13 @@
-#ifndef TPG4_NODO_H
-#define TPG4_NODO_H
+/*
+ * Nodo.h
+ *
+ *  Created on: 2 jul. 2020
+ *      Author: Santi
+ */
+
+#ifndef NODO_H_
+#define NODO_H_
+
 template < typename Dato >
 class Nodo
 {
@@ -18,12 +26,12 @@ public:
     ~Nodo();
 // Setea el dato (lo cambia)
 // PRE: el nodo tiene que estar creado
-// d tiene que ser un dato v√°lido
+// d tiene que ser un dato v·lido
 // POST: el nodo queda con el dato d
     void asignar_dato(Dato d);
     // Setear el puntero al siguiente nodo
-    // PRE: nodo creado y ps v√°lido
-    // POST: el puntero al siguiente apuntar√° a ps
+    // PRE: nodo creado y ps v·lido
+    // POST: el puntero al siguiente apuntar· a ps
     void asignar_siguiente(Nodo* ps);
     // Obtener el dato
     // PRE: nodo creado
@@ -32,7 +40,7 @@ public:
     // Obtener el puntero al nodo siguiente
     // PRE: nodo creado
     // POST: Devuelve el puntero al siguiente nodo
-    // si es el √∫ltimo devuelve NULL
+    // si es el ˙ltimo devuelve NULL
     Nodo* obtener_siguiente();
 
 };
@@ -73,4 +81,7 @@ Nodo<Dato>* Nodo<Dato>::obtener_siguiente()
 {
     return psig;
 }
-#endif //TPG4_NODO_H
+
+
+
+#endif /* NODO_H_ */

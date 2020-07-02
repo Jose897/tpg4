@@ -1,19 +1,27 @@
-#ifndef TPG4_LISTA_H
-#define TPG4_LISTA_H
-# include <iostream>
-# include "Nodo.h"
+/*
+ * Lista.h
+ *
+ *  Created on: 2 jul. 2020
+ *      Author: Santi
+ */
+
+#ifndef LISTA_H_
+#define LISTA_H_
+
+#include <iostream>
+#include "Nodo.h"
 template < typename Dato >
 class Lista
 {
 private:
     // Primer elemento de la lista
     Nodo<Dato>* primero;
-    // Tama√±o de la lista
+    // TamaÒo de la lista
     unsigned tam;
 public:
     // Constructor
     // PRE: Ninguna
-    // POST: construye una lista vac√≠a
+    // POST: construye una lista vacÌa
     // - primero apunta a nulo
     // - tam = 0
     Lista();
@@ -22,29 +30,29 @@ public:
     // POST: Libera todos los recursos de la lista
     ~Lista();
     // Agregar un elemento a la lista
-    // PRE: lista creada y d v√°lido
+    // PRE: lista creada y d v·lido
     // POST: agrega un dato dentro de un nodo al principio
     // - modifica el primero
     // - tam se incrementa en 1
     void insertar(Dato d);
-    // Obtener el tama√±o de la lista
+    // Obtener el tamaÒo de la lista
     // PRE: Lista creada
-    // POST: devuelve el tama√±o de la lista (cantidad de nodos)
+    // POST: devuelve el tamaÒo de la lista (cantidad de nodos)
     unsigned obtener_tamanio();
-    // Obtener el dato que est√° en la posici√≥n pos
-    // PRE: - lista creada y no vac√≠a
+    // Obtener el dato que est· en la posiciÛn pos
+    // PRE: - lista creada y no vacÌa
     // - 0 < pos <= tam
-    // POST: devuelve el dato que est√° en la posici√≥n pos
+    // POST: devuelve el dato que est· en la posiciÛn pos
     // se toma 1 como el primero
     Dato obtener_dato(unsigned pos);
-    // ¬øLista vacia?
+    // øLista vacia?
     // PRE: Lista creada
     // POST: T si es vacia, F sino
     bool lista_vacia();
-// Borrado del nodo que est√° en la posici√≥n pos
-    // PRE: - lista creada y no vac√≠a
+// Borrado del nodo que est· en la posiciÛn pos
+    // PRE: - lista creada y no vacÌa
     // - 0 < pos <= tam
-    // POST: libera el nodo que est√° en la posici√≥n pos
+    // POST: libera el nodo que est· en la posiciÛn pos
     // se toma 1 como el primero
     void borrar_dato(unsigned pos);
 };
@@ -124,4 +132,5 @@ void Lista<Dato>::borrar_dato(unsigned pos)
 }
 
 
-#endif //TPG4_LISTA_H
+
+#endif /* LISTA_H_ */

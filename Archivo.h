@@ -1,5 +1,13 @@
-#ifndef TPG4_ARCHIVO_H
-#define TPG4_ARCHIVO_H
+/*
+ * Archivo.h
+ *
+ *  Created on: 2 jul. 2020
+ *      Author: Santi
+ */
+
+#ifndef ARCHIVO_H_
+#define ARCHIVO_H_
+
 #include <fstream>
 #include <string>
 #include "Pelicula.h"
@@ -13,5 +21,4 @@ public:
     ~Archivo();
 
 };
-
-#endif //TPG4_ARCHIVO_H
+#endif /* ARCHIVO_H_ */

@@ -35,15 +35,19 @@ void Archivo::carga_peliculas(string nombre_archivo, Lista<Pelicula*> &lista){
             stringstream linea(puntaje_pelicula);
             int punt = 0;
             linea >> punt;
-            Pelicula *peli = new Pelicula(titulo_pelicula, genero_pelicula, punt, director_pelicula, separar_actores(actores_pelicula));
+            Pelicula *peli = new Pelicula(titulo_pelicula, genero_pelicula, punt, director_pelicula);
             lista.insertar(peli);
             lista.obtener_dato(0);
+
+
+
         }
+        archivo.close();
     }
     else{
         cout<<"El archivo fallo"<<endl;
     }
-    archivo.close();
+
 }
 
 

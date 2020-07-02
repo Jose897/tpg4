@@ -1,12 +1,5 @@
-/*
- * Pelicula.h
- *
- *  Created on: 2 jul. 2020
- *      Author: Santi
- */
-
-#ifndef PELICULA_H_
-#define PELICULA_H_
+#ifndef TPG4_PELICULA_H
+#define TPG4_PELICULA_H
 
 #include <iostream>
 #include <string>
@@ -24,11 +17,10 @@ private:
     Lista<string> lista_actores;
 public:
     Pelicula();
-    Pelicula(string titulo, string genero, int puntaje, string director, Lista<string>);
+    Pelicula(string titulo, string genero, int puntaje, string director);
     string obtener_titulo();
     string obtener_genero();
     int obtener_puntaje();
     string obtener_director();
 };
-
-#endif /* PELICULA_H_ */
+#endif //TPG4_PELICULA_H

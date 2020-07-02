@@ -1,30 +1,17 @@
-/*
- * Archivo.h
- *
- *  Created on: 2 jul. 2020
- *      Author: Santi
- */
-
-#ifndef ARCHIVO_H_
-#define ARCHIVO_H_
-
+#ifndef TPG4_ARCHIVO_H
+#define TPG4_ARCHIVO_H
 #include <fstream>
 #include <string>
 #include "Pelicula.h"
 #include <sstream>
 using namespace std;
-
 class Archivo{
-	private:
+private:
+public:
+    Archivo();
+    void carga_peliculas(string nombre_archivo, Lista<Pelicula*> &lista);
+    ~Archivo();
 
-	public:
-
-    	Archivo();
-
-    	void carga_peliculas(string nombre_archivo, Lista<Pelicula*> &lista);
-
-    	Lista <string> separar_actores(string);
-
-    	~Archivo();
 };
-#endif /* ARCHIVO_H_ */
+
+#endif //TPG4_ARCHIVO_H

@@ -1,12 +1,5 @@
-/*
- * menu.h
- *
- *  Created on: 1 jun. 2020
- *      Author: Santi
- */
-
-#ifndef MENU_H_
-#define MENU_H_
+#ifndef MENU_H_INCLUDED
+#define MENU_H_INCLUDED
 
 /*La idea del menu seria que el main no tenga codigo y todo lo que serian el manejo de las opciones y
 lo que ve el usuario se haga con esta clase. Deberia tener como atributos las listas para que a la hora de
@@ -25,6 +18,4 @@ class Menu{
         //       False si es una opcion invalida
         bool opcion_valida(int entrada);
 };
-
-
-#endif /* MENU_H_ */
+#endif // MENU_H_INCLUDED

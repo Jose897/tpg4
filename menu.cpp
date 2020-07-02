@@ -1,13 +1,3 @@
-/*
- * menu.cpp
- *
- *  Created on: 1 jun. 2020
- *      Author: Santi
- */
-
-#include "menu.h"
-
-
 Menu::mostrar_menu(){
     int opcion;
     cout << "============================= BIENVENIDO AL PROGRAMA =============================" << endl << endl;

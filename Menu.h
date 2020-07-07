@@ -18,13 +18,15 @@ lo que ve el usuario se haga con esta clase. Deberia tener como atributos las li
 mostrarlas acceda a ellas. Eso lo agregamos cuando tengamos las listas ya armadas. (Falta armar la de recomendadas)*/
 
 class Menu{
+	private:
+		bool salir = true;
     public:
         // PRE: Recibe un numero entre 1 y 3
         // POST: Devuelve la opcion que selecciona el usuario
-        int mostrar_menu();
+        void mostrar_menu(Lista<Pelicula*> &, Lista<Pelicula*> &);
         // PRE: -
         // POST: Realiza la tarea que selecciono el  usuario
-        void procesar_opcion(int opcion, Lista<Pelicula*> &, Lista<Pelicula*> &);
+        void procesar_opcion(int opcion,Lista<Pelicula*> &, Lista<Pelicula*> &);
         // PRE: Recibe la opcion que selecciona el usuario
         // POST: True si es opcion valida
         //       False si es una opcion invalida

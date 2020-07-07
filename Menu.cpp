@@ -33,7 +33,7 @@ void Menu::procesar_opcion(int opcion,Lista<Pelicula*> &lista_peliculas_vistas, 
 		case 1: imprimir_peliculas(lista_peliculas_vistas); break;
 		case 2: imprimir_peliculas(lista_peliculas_no_vistas); break;
 		case 3:
-            carga_lista_recomendadas(lista_peliculas_vistas, lista_peliculas_no_vistas, lista_recomendadas);
+            carga_lista_recomendadas(lista_peliculas_vistas, lista_peliculas_no_vistas);
             imprimir_peliculas(lista_recomendadas);
             break;
 		case 4: salir = false ; break;
@@ -53,7 +53,7 @@ void Menu:: imprimir_peliculas(Lista<Pelicula*> &lista_peliculas) {
 
 
 
-void Menu::carga_lista_recomendadas(Lista<Pelicula*> &lista_vistas, Lista<Pelicula*> &lista_no_vistas, Lista<Pelicula*> &lista_recomendadas)
+void Menu::carga_lista_recomendadas(Lista<Pelicula*> &lista_vistas, Lista<Pelicula*> &lista_no_vistas)
 {
     for (int i = 1; i <= lista_no_vistas.obtener_tamanio(); i++) {
         for( unsigned j = 1; j<=lista_vistas.obtener_tamanio(); j++) {
@@ -69,6 +69,7 @@ void Menu::carga_lista_recomendadas(Lista<Pelicula*> &lista_vistas, Lista<Pelicu
                 else if(lista_vistas.obtener_dato(j)->obtener_genero() == lista_no_vistas.obtener_dato(i)->obtener_genero()){
                     lista_recomendadas.insertar(lista_no_vistas.obtener_dato(i));
                     break;
+//Falta agregar recomendadas en base a los actores (falta terminar lista actores para eso)
             }
         }
     }

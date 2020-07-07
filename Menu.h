@@ -25,7 +25,7 @@ public:
         //       False si es una opcion invalida
         bool opcion_valida(int entrada);
         void imprimir_peliculas(Lista<Pelicula*> &);
-    void carga_lista_recomendadas(Lista<Pelicula*> &lista_vistas, Lista<Pelicula*> &lista_no_vistas, Lista<Pelicula*> &lista_recomendadas);
+        void carga_lista_recomendadas(Lista<Pelicula*> &lista_vistas, Lista<Pelicula*> &lista_no_vistas);
 
 };
 

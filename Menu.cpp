@@ -32,19 +32,46 @@ void Menu::procesar_opcion(int opcion,Lista<Pelicula*> &lista_peliculas_vistas, 
 	switch(opcion){
 		case 1: imprimir_peliculas(lista_peliculas_vistas); break;
 		case 2: imprimir_peliculas(lista_peliculas_no_vistas); break;
-		case 3: //Recomendadas; break;
+		case 3:
+            carga_lista_recomendadas(lista_peliculas_vistas, lista_peliculas_no_vistas, lista_recomendadas);
+            imprimir_peliculas(lista_recomendadas);
+            break;
 		case 4: salir = false ; break;
 	}
 }
 
-void Menu:: imprimir_peliculas(Lista<Pelicula*> &lista_peliculas){
-    for (int i = 1; i <= lista_peliculas.obtener_tamanio(); i++)
-    {
-        cout << i << "- "  << std::endl;
+void Menu:: imprimir_peliculas(Lista<Pelicula*> &lista_peliculas) {
+    for (int i = 1; i <= lista_peliculas.obtener_tamanio(); i++) {
+        cout << i << "- " << std::endl;
         cout << "Titulo: " << lista_peliculas.obtener_dato(i)->obtener_titulo() << endl;
         cout << "Genero: " << lista_peliculas.obtener_dato(i)->obtener_genero() << endl;
         cout << "Puntaje: " << lista_peliculas.obtener_dato(i)->obtener_puntaje() << endl;
         cout << "Director: " << lista_peliculas.obtener_dato(i)->obtener_director() << endl;
-      //  cout << "Actores: " << lista_peliculas.obtener_dato(i)->obtener_actores() << endl; LISTA ACTORES NO FUNCIONA
+        //  cout << "Actores: " << lista_peliculas.obtener_dato(i)->obtener_actores() << endl; LISTA ACTORES NO FUNCIONA
+    }
+}
+
+
+
+void Menu::carga_lista_recomendadas(Lista<Pelicula*> &lista_vistas, Lista<Pelicula*> &lista_no_vistas, Lista<Pelicula*> &lista_recomendadas)
+{
+    for (int i = 1; i <= lista_no_vistas.obtener_tamanio(); i++) {
+        for( unsigned j = 1; j<=lista_vistas.obtener_tamanio(); j++) {
+            /*if (lista_no_vistas.obtener_dato(i)->obtener_puntaje() >= 7) {
+                lista_recomendadas.insertar(lista_no_vistas.obtener_dato(i));*/
+                if( lista_no_vistas.obtener_dato(i)->obtener_puntaje() >= 7){
+                    lista_recomendadas.insertar(lista_no_vistas.obtener_dato(i));
+                    break;
+                }
+                else if(lista_vistas.obtener_dato(j)->obtener_director() == lista_no_vistas.obtener_dato(i)->obtener_director()){
+                    cout << "El director coincide y es: " << lista_no_vistas.obtener_dato(i)->obtener_director() << ".\n";
+                    lista_recomendadas.insertar(lista_no_vistas.obtener_dato(i));
+                    break;
+                }
+                else if(lista_vistas.obtener_dato(j)->obtener_genero() == lista_no_vistas.obtener_dato(i)->obtener_genero()){
+                    lista_recomendadas.insertar(lista_no_vistas.obtener_dato(i));
+                    break;
+            }
         }
     }
+}

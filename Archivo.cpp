@@ -52,7 +52,7 @@ void Archivo::carga_peliculas(const string nombre_archivo, Lista<Pelicula*> &lis
 
 
 
-Lista <string> Archivo::separar_actores(string actores_pelicula){
+Lista <string>  Archivo::separar_actores(string actores_pelicula){
 
 	Lista <string> l_actores;
 

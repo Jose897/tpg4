@@ -11,7 +11,9 @@ mostrarlas acceda a ellas. Eso lo agregamos cuando tengamos las listas ya armada
 class Menu{
 	private:
 		bool salir = true;
-    public:
+        Lista<Pelicula*> lista_recomendadas;
+
+public:
         // PRE: Recibe un numero entre 1 y 3
         // POST: Devuelve la opcion que selecciona el usuario
         void mostrar_menu(Lista<Pelicula*> &, Lista<Pelicula*> &);
@@ -23,7 +25,7 @@ class Menu{
         //       False si es una opcion invalida
         bool opcion_valida(int entrada);
         void imprimir_peliculas(Lista<Pelicula*> &);
-
+    void carga_lista_recomendadas(Lista<Pelicula*> &lista_vistas, Lista<Pelicula*> &lista_no_vistas, Lista<Pelicula*> &lista_recomendadas);
 
 };
 

@@ -24,9 +24,8 @@ int main()
     Lista<Pelicula*> lista_peliculas_no_vistas;
     carga.carga_peliculas(NOMBRE_ARCHIVO_VISTAS, lista_peliculas_vistas);
     carga.carga_peliculas(NOMBRE_ARCHIVO_NO_VISTAS, lista_peliculas_no_vistas);
-    cout << lista_peliculas_no_vistas.obtener_dato(1)->obtener_director();
     Menu menu;
     entrada = menu.mostrar_menu();
-    menu.procesar_opcion(entrada);
+    menu.procesar_opcion(entrada, lista_peliculas_vistas, lista_peliculas_no_vistas);
     return 0;
 }

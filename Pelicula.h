@@ -29,6 +29,7 @@ public:
     string obtener_genero();
     int obtener_puntaje();
     string obtener_director();
+    Lista <string> obtener_actores();
 };
 
 #endif /* PELICULA_H_ */

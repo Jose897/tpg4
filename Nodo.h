@@ -8,8 +8,6 @@
 #ifndef NODO_H_
 #define NODO_H_
 
-#ifndef TPG4_NODO_H
-#define TPG4_NODO_H
 template < typename Dato >
 class Nodo
 {

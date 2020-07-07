@@ -37,3 +37,6 @@ string Pelicula::obtener_director(){
     return director;
 }
 
+Lista <string> Pelicula::obtener_actores(){
+	return lista_actores;
+}

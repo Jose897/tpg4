@@ -8,8 +8,6 @@
 #ifndef LISTA_H_
 #define LISTA_H_
 
-#ifndef TPG4_LISTA_H
-#define TPG4_LISTA_H
 # include <iostream>
 # include "Nodo.h"
 template < typename Dato >
@@ -47,6 +45,10 @@ public:
     // POST: devuelve el dato que está en la posición pos
     // se toma 1 como el primero
     Dato obtener_dato(unsigned pos);
+    //Imprimir la lista por pantalla
+    //PRE: lista creada y no vacia
+    //POST: imprimir la lista por pantalla
+    void imprimir_lista();
     // ¿Lista vacia?
     // PRE: Lista creada
     // POST: T si es vacia, F sino
@@ -107,6 +109,25 @@ Dato Lista<Dato>::obtener_dato(unsigned pos)
 }
 
 template < typename Dato >
+void Lista<Dato>::imprimir_lista()
+{
+	int i = 1;
+	Nodo<Dato>*p = primero;
+
+	std::cout << "\n";
+	while(p != NULL)
+	{
+		std::cout << i << "- "  << p -> obtener_dato() -> obtener_titulo() << std::endl;
+		std::cout << i << "- "  << p -> obtener_dato() -> obtener_genero() << std::endl;
+		std::cout << i << "- "  << p -> obtener_dato() -> obtener_puntaje() << std::endl;
+		std::cout << i << "- "  << p -> obtener_dato() -> obtener_director() << std::endl;
+		//Imprimir actores
+		p = p -> obtener_siguiente();
+		i++;
+	}
+}
+
+template < typename Dato >
 unsigned Lista<Dato>::obtener_tamanio()
 {
     return tam;
@@ -134,8 +155,5 @@ void Lista<Dato>::borrar_dato(unsigned pos)
         tam--;
     }
 }
-
-
-
 
 #endif /* LISTA_H_ */

@@ -1,5 +1,17 @@
-#ifndef MENU_H_INCLUDED
-#define MENU_H_INCLUDED
+/*
+ * menu.h
+ *
+ *  Created on: 1 jun. 2020
+ *      Author: Santi
+ */
+
+#ifndef MENU_H_
+#define MENU_H_
+
+#include "Pelicula.h"
+#include "Lista.h"
+#include <iostream>
+using namespace std;
 
 /*La idea del menu seria que el main no tenga codigo y todo lo que serian el manejo de las opciones y
 lo que ve el usuario se haga con esta clase. Deberia tener como atributos las listas para que a la hora de
@@ -12,10 +24,12 @@ class Menu{
         int mostrar_menu();
         // PRE: -
         // POST: Realiza la tarea que selecciono el  usuario
-        void procesar_opcion(int opcion);
+        void procesar_opcion(int opcion, Lista<Pelicula*> &, Lista<Pelicula*> &);
         // PRE: Recibe la opcion que selecciona el usuario
         // POST: True si es opcion valida
         //       False si es una opcion invalida
         bool opcion_valida(int entrada);
 };
-#endif // MENU_H_INCLUDED
+
+
+#endif /* MENU_H_ */

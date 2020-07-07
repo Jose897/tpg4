@@ -14,7 +14,7 @@ Archivo:: ~Archivo() {
 
 }
 
-void Archivo::carga_peliculas(string nombre_archivo, Lista<Pelicula*> &lista){
+void Archivo::carga_peliculas(const string nombre_archivo, Lista<Pelicula*> &lista){
     string titulo_pelicula;
     string director_pelicula;
     string genero_pelicula;
@@ -35,7 +35,7 @@ void Archivo::carga_peliculas(string nombre_archivo, Lista<Pelicula*> &lista){
             stringstream linea(puntaje_pelicula);
             int punt = 0;
             linea >> punt;
-            Pelicula *peli = new Pelicula(titulo_pelicula, genero_pelicula, punt, director_pelicula);
+            Pelicula *peli = new Pelicula(titulo_pelicula, genero_pelicula, punt, director_pelicula, separar_actores(actores_pelicula));
             lista.insertar(peli);
             lista.obtener_dato(0);
 
@@ -55,20 +55,17 @@ void Archivo::carga_peliculas(string nombre_archivo, Lista<Pelicula*> &lista){
 Lista <string> Archivo::separar_actores(string actores_pelicula){
 
 	Lista <string> l_actores;
-	char aux = '\0';
-	int i = 0;
-	string actor;
 
-	while(aux != '\n'){
-		aux = actores_pelicula[i];
-		while(aux != ' '){
-			actor[i] += aux;
-			i++;
-			aux = actores_pelicula[i];
-		}
-		l_actores.insertar(actor);
-		cout << actor;
-		actor = "\0";
+	std::istringstream isstream(actores_pelicula);
+
+	while(!isstream.eof()){
+
+		std::string actor;
+
+	    isstream >> actor;
+
+	    l_actores.insertar(actor);
 	}
+
 	return l_actores;
 }

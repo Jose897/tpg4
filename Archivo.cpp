@@ -66,6 +66,5 @@ Lista <string> Archivo::separar_actores(string actores_pelicula){
 
 	    l_actores.insertar(actor);
 	}
-
 	return l_actores;
 }

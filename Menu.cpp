@@ -1,10 +1,3 @@
-/*
- * menu.cpp
- *
- *  Created on: 1 jun. 2020
- *      Author: Santi
- */
-
 #include "Menu.h"
 
 
@@ -37,9 +30,21 @@ bool Menu::opcion_valida(int entrada){
 void Menu::procesar_opcion(int opcion,Lista<Pelicula*> &lista_peliculas_vistas, Lista<Pelicula*> &lista_peliculas_no_vistas){
 
 	switch(opcion){
-		case 1: lista_peliculas_vistas.imprimir_lista(); break;
-		case 2: lista_peliculas_no_vistas.imprimir_lista(); break;
+		case 1: imprimir_peliculas(lista_peliculas_vistas); break;
+		case 2: imprimir_peliculas(lista_peliculas_no_vistas); break;
 		case 3: //Recomendadas; break;
 		case 4: salir = false ; break;
 	}
 }
+
+void Menu:: imprimir_peliculas(Lista<Pelicula*> &lista_peliculas){
+    for (int i = 1; i <= lista_peliculas.obtener_tamanio(); i++)
+    {
+        cout << i << "- "  << std::endl;
+        cout << "Titulo: " << lista_peliculas.obtener_dato(i)->obtener_titulo() << endl;
+        cout << "Genero: " << lista_peliculas.obtener_dato(i)->obtener_genero() << endl;
+        cout << "Puntaje: " << lista_peliculas.obtener_dato(i)->obtener_puntaje() << endl;
+        cout << "Director: " << lista_peliculas.obtener_dato(i)->obtener_director() << endl;
+      //  cout << "Actores: " << lista_peliculas.obtener_dato(i)->obtener_actores() << endl; LISTA ACTORES NO FUNCIONA
+        }
+    }

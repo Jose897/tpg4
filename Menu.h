@@ -1,10 +1,3 @@
-/*
- * menu.h
- *
- *  Created on: 1 jun. 2020
- *      Author: Santi
- */
-
 #ifndef MENU_H_
 #define MENU_H_
 
@@ -29,6 +22,9 @@ class Menu{
         // POST: True si es opcion valida
         //       False si es una opcion invalida
         bool opcion_valida(int entrada);
+        void imprimir_peliculas(Lista<Pelicula*> &);
+
+
 };
 
 

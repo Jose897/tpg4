@@ -1,16 +1,5 @@
-/*
- * main.cpp
- *
- *  Created on: 2 jul. 2020
- *      Author: Santi
- */
-
-
 #include "Archivo.h"
-#include "Lista.h"
-
 #include <string>
-#include "Archivo.h"
 #include "Menu.h"
 using namespace std;
 const string NOMBRE_ARCHIVO_NO_VISTAS = "peliculas_no_vistas.txt";

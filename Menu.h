@@ -12,11 +12,9 @@
 #include "Lista.h"
 #include <iostream>
 using namespace std;
-
 /*La idea del menu seria que el main no tenga codigo y todo lo que serian el manejo de las opciones y
 lo que ve el usuario se haga con esta clase. Deberia tener como atributos las listas para que a la hora de
 mostrarlas acceda a ellas. Eso lo agregamos cuando tengamos las listas ya armadas. (Falta armar la de recomendadas)*/
-
 class Menu{
 	private:
 		bool salir = true;

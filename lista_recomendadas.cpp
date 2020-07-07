@@ -5,6 +5,7 @@ Faltaria comparar los actores pero con genero, director y puntaje funciona.
 Creo que lo ideal seria tener una clase que maneje las listas y las tenga como atributos.
 Por lo menos las de vistas y no vistas que si o si vamos a leer desde el comienzo del programa.
 */
+/*
 Lista <Pelicula*> cargar_lista_recomendadas(Lista<Pelicula*> &lista_peliculas_vistas, Lista<Pelicula*> &lista_peliculas_no_vistas);
   Lista <Pelicula*> lista_peliculas_recomendadas;
   for( unsigned i = 1; i<=lista_peliculas_no_vistas.obtener_tam(); i++){
@@ -25,3 +26,4 @@ Lista <Pelicula*> cargar_lista_recomendadas(Lista<Pelicula*> &lista_peliculas_vi
      }
   }
   return lista_peliculas_recomendadas;
+*/

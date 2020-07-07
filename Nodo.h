@@ -5,8 +5,8 @@
  *      Author: Santi
  */
 
-#ifndef NODO_H_
-#define NODO_H_
+#ifndef NODO_H
+#define NODO_H
 
 template < typename Dato >
 class Nodo
@@ -26,12 +26,12 @@ public:
     ~Nodo();
 // Setea el dato (lo cambia)
 // PRE: el nodo tiene que estar creado
-// d tiene que ser un dato válido
+// d tiene que ser un dato vï¿½lido
 // POST: el nodo queda con el dato d
     void asignar_dato(Dato d);
     // Setear el puntero al siguiente nodo
-    // PRE: nodo creado y ps válido
-    // POST: el puntero al siguiente apuntará a ps
+    // PRE: nodo creado y ps vï¿½lido
+    // POST: el puntero al siguiente apuntarï¿½ a ps
     void asignar_siguiente(Nodo* ps);
     // Obtener el dato
     // PRE: nodo creado
@@ -40,7 +40,7 @@ public:
     // Obtener el puntero al nodo siguiente
     // PRE: nodo creado
     // POST: Devuelve el puntero al siguiente nodo
-    // si es el último devuelve NULL
+    // si es el ï¿½ltimo devuelve NULL
     Nodo* obtener_siguiente();
 
 };
@@ -82,4 +82,4 @@ Nodo<Dato>* Nodo<Dato>::obtener_siguiente()
     return psig;
 }
 
-#endif /* NODO_H_ */
+#endif //NODO_H

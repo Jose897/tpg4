@@ -4,7 +4,6 @@
  *  Created on: 2 jul. 2020
  *      Author: Santi
  */
-
 #ifndef LISTA_H_
 #define LISTA_H_
 
@@ -16,12 +15,12 @@ class Lista
 private:
     // Primer elemento de la lista
     Nodo<Dato>* primero;
-    // Tamaño de la lista
+    // Tamaï¿½o de la lista
     unsigned tam;
 public:
     // Constructor
     // PRE: Ninguna
-    // POST: construye una lista vacía
+    // POST: construye una lista vacï¿½a
     // - primero apunta a nulo
     // - tam = 0
     Lista();
@@ -30,33 +29,33 @@ public:
     // POST: Libera todos los recursos de la lista
     ~Lista();
     // Agregar un elemento a la lista
-    // PRE: lista creada y d válido
+    // PRE: lista creada y d vï¿½lido
     // POST: agrega un dato dentro de un nodo al principio
     // - modifica el primero
     // - tam se incrementa en 1
     void insertar(Dato d);
-    // Obtener el tamaño de la lista
+    // Obtener el tamaï¿½o de la lista
     // PRE: Lista creada
-    // POST: devuelve el tamaño de la lista (cantidad de nodos)
+    // POST: devuelve el tamaï¿½o de la lista (cantidad de nodos)
     unsigned obtener_tamanio();
-    // Obtener el dato que está en la posición pos
-    // PRE: - lista creada y no vacía
+    // Obtener el dato que estï¿½ en la posiciï¿½n pos
+    // PRE: - lista creada y no vacï¿½a
     // - 0 < pos <= tam
-    // POST: devuelve el dato que está en la posición pos
+    // POST: devuelve el dato que estï¿½ en la posiciï¿½n pos
     // se toma 1 como el primero
     Dato obtener_dato(unsigned pos);
     //Imprimir la lista por pantalla
     //PRE: lista creada y no vacia
     //POST: imprimir la lista por pantalla
     void imprimir_lista();
-    // ¿Lista vacia?
+    // ï¿½Lista vacia?
     // PRE: Lista creada
     // POST: T si es vacia, F sino
     bool lista_vacia();
-// Borrado del nodo que está en la posición pos
-    // PRE: - lista creada y no vacía
+// Borrado del nodo que estï¿½ en la posiciï¿½n pos
+    // PRE: - lista creada y no vacï¿½a
     // - 0 < pos <= tam
-    // POST: libera el nodo que está en la posición pos
+    // POST: libera el nodo que estï¿½ en la posiciï¿½n pos
     // se toma 1 como el primero
     void borrar_dato(unsigned pos);
 };
@@ -117,10 +116,11 @@ void Lista<Dato>::imprimir_lista()
 	std::cout << "\n";
 	while(p != NULL)
 	{
-		std::cout << i << "- "  << p -> obtener_dato() -> obtener_titulo() << std::endl;
-		std::cout << i << "- "  << p -> obtener_dato() -> obtener_genero() << std::endl;
-		std::cout << i << "- "  << p -> obtener_dato() -> obtener_puntaje() << std::endl;
-		std::cout << i << "- "  << p -> obtener_dato() -> obtener_director() << std::endl;
+        std::cout << i << "- "  << std::endl;
+		std::cout << "Titulo: " << p -> obtener_dato() -> obtener_titulo() << std::endl;
+		std::cout << "Genero: " << p -> obtener_dato() -> obtener_genero() << std::endl;
+		std::cout << "Puntaje: " << p -> obtener_dato() -> obtener_puntaje() << std::endl;
+		std::cout << "Director: " << p -> obtener_dato() -> obtener_director() << std::endl;
 		//Imprimir actores
 		p = p -> obtener_siguiente();
 		i++;
@@ -156,4 +156,4 @@ void Lista<Dato>::borrar_dato(unsigned pos)
     }
 }
 
-#endif /* LISTA_H_ */
+#endif //LISTA_H_

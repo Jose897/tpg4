@@ -5,7 +5,7 @@
  *      Author: Santi
  */
 
-#include "menu.h"
+#include "Menu.h"
 
 
 void Menu::mostrar_menu(Lista<Pelicula*> &lista_peliculas_vistas, Lista<Pelicula*> &lista_peliculas_no_vistas){

@@ -21,10 +21,10 @@ private:
     string genero;
     int puntaje;
     string director;
-    Lista<string> lista_actores;
+    Lista <string> lista_actores;
 public:
     Pelicula();
-    Pelicula(string titulo, string genero, int puntaje, string director, Lista<string>);
+    Pelicula(string titulo, string genero, int puntaje, string director, Lista<string> );
     string obtener_titulo();
     string obtener_genero();
     int obtener_puntaje();
@@ -32,4 +32,4 @@ public:
     Lista <string> obtener_actores();
 };
 
-#endif /* PELICULA_H_ */
+#endif //PELICULA_H_

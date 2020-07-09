@@ -45,7 +45,7 @@ void Archivo::carga_peliculas(const string nombre_archivo, Lista<Pelicula*> &lis
         archivo.close();
     }
     else{
-        throw "El archivo no existe!!\n"
+        throw "El archivo no existe!!!\n"
     }
 
 }

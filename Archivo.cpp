@@ -45,7 +45,7 @@ void Archivo::carga_peliculas(const string nombre_archivo, Lista<Pelicula*> &lis
         archivo.close();
     }
     else{
-        cout<<"El archivo fallo"<<endl;
+        throw "El archivo no existe!!\n"
     }
 
 }

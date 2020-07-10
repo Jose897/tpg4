@@ -45,26 +45,29 @@ void Archivo::carga_peliculas(const string nombre_archivo, Lista<Pelicula*> &lis
         archivo.close();
     }
     else{
-        throw "El archivo no existe!!!\n"
+        throw "El archivo no existe!!!\n";
     }
 
 }
 
 
 
-Lista <string>  Archivo::separar_actores(string actores_pelicula){
+Lista <string*> Archivo::separar_actores(string actores_pelicula){
 
-	Lista <string> l_actores;
+	Lista <string*> l_actores;
 
-	std::istringstream isstream(actores_pelicula);
+	istringstream isstream(actores_pelicula);
 
 	while(!isstream.eof()){
 
-		std::string actor;
+		string actor;
 
 	    isstream >> actor;
 
-	    l_actores.insertar(actor);
+	    string* actor_puntero = new string(actor);
+
+	    l_actores.insertar(actor_puntero);
 	}
+
 	return l_actores;
 }

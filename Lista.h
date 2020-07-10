@@ -48,6 +48,7 @@ public:
     //PRE: lista creada y no vacia
     //POST: imprimir la lista por pantalla
     void imprimir_lista();
+    void imprimir_actores();
     // �Lista vacia?
     // PRE: Lista creada
     // POST: T si es vacia, F sino
@@ -113,6 +114,7 @@ void Lista<Dato>::imprimir_lista()
 	int i = 1;
 	Nodo<Dato>*p = primero;
 
+
 	std::cout << "\n";
 	while(p != NULL)
 	{
@@ -121,10 +123,26 @@ void Lista<Dato>::imprimir_lista()
 		std::cout << "Genero: " << p -> obtener_dato() -> obtener_genero() << std::endl;
 		std::cout << "Puntaje: " << p -> obtener_dato() -> obtener_puntaje() << std::endl;
 		std::cout << "Director: " << p -> obtener_dato() -> obtener_director() << std::endl;
-		//Imprimir actores
+		std::cout << "Actores: " << p -> obtener_dato() -> obtener_actores().imprimir_actores();
 		p = p -> obtener_siguiente();
 		i++;
 	}
+}
+
+template < typename Dato >
+void Lista<Dato>::imprimir_actores()
+{
+	std::string actores;
+	Nodo<Dato>*paux = primero;
+
+	while(paux != NULL){
+
+		actores += paux -> obtener_dato();
+		actores += " ";
+		paux = paux -> obtener_siguiente();
+
+	}
+	std::cout << actores << std::endl;
 }
 
 template < typename Dato >

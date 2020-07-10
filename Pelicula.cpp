@@ -6,7 +6,7 @@ Pelicula::Pelicula(){
     puntaje = 0;
     genero = "";
 }
-Pelicula::Pelicula(string titulo, string genero, int puntaje, string director, Lista<string> lista_actores) {
+Pelicula::Pelicula(string titulo, string genero, int puntaje, string director, Lista<string*> lista_actores) {
     this -> titulo = titulo;
     this -> genero = genero;
     this -> puntaje = puntaje;
@@ -27,6 +27,6 @@ int Pelicula::obtener_puntaje(){
 string Pelicula::obtener_director(){
     return director;
 }
-Lista <string> Pelicula::obtener_actores(){
+Lista <string*> Pelicula::obtener_actores(){
 	return lista_actores;
 }

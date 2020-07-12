@@ -47,7 +47,11 @@ void Menu:: imprimir_peliculas(Lista<Pelicula*> &lista_peliculas) {
         cout << "Genero: " << lista_peliculas.obtener_dato(i)->obtener_genero() << endl;
         cout << "Puntaje: " << lista_peliculas.obtener_dato(i)->obtener_puntaje() << endl;
         cout << "Director: " << lista_peliculas.obtener_dato(i)->obtener_director() << endl;
-        //  cout << "Actores: " << lista_peliculas.obtener_dato(i)->obtener_actores() << endl; LISTA ACTORES NO FUNCIONA
+        cout << "Actores: ";
+        for (int j = 1; j <= lista_peliculas.obtener_dato(i)->obtener_actores().obtener_tamanio(); j++){
+            cout << *lista_peliculas.obtener_dato(i)->obtener_actores().obtener_dato(j) << " ";
+        }
+        cout << endl;
     }
 }
 

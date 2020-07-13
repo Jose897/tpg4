@@ -102,8 +102,8 @@ Lista <string*>* Archivo::separar_actores(string actores_pelicula){
 		}
     }
 	return lista_recomendadas;
-}*/
-
+}
+*/
 Lista<Pelicula*> Archivo::carga_lista_recomendadas(Lista<Pelicula*> &lista_vistas, Lista<Pelicula*> &lista_no_vistas){
     Lista<Pelicula*> lista_recomendadas;
     for (int i = 1; i <= lista_no_vistas.obtener_tamanio(); i++) {

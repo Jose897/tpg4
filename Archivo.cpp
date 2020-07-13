@@ -37,8 +37,6 @@ void Archivo::carga_peliculas(const string nombre_archivo, Lista<Pelicula*> &lis
             linea >> punt;
             Pelicula *peli = new Pelicula(titulo_pelicula, genero_pelicula, punt, director_pelicula,separar_actores(actores_pelicula));
             lista.insertar(peli);
-            lista.obtener_dato(0);
-
 
 
         }
@@ -89,7 +87,17 @@ Lista<Pelicula*> Archivo::carga_lista_recomendadas(Lista<Pelicula*> &lista_vista
             else if(lista_vistas.obtener_dato(j)->obtener_genero() == lista_no_vistas.obtener_dato(i)->obtener_genero()){
                 lista_recomendadas.insertar(lista_no_vistas.obtener_dato(i));
                 break;
-//Falta agregar recomendadas en base a los actores (falta terminar lista actores para eso)
+            }
+            else{
+                bool coincidencia = false;
+                for (int k = 1; k <= lista_no_vistas.obtener_dato(i)->obtener_actores()->obtener_tamanio() && !coincidencia; k++){
+                    for (int z = 1; z <= lista_vistas.obtener_dato(j)->obtener_actores()->obtener_tamanio() && !coincidencia; z++){
+                        if (*lista_no_vistas.obtener_dato(i)->obtener_actores()->obtener_dato(k) == *lista_vistas.obtener_dato(j)->obtener_actores()->obtener_dato(z)){
+                            lista_recomendadas.insertar(lista_no_vistas.obtener_dato(i));
+                            coincidencia = true;
+                        }
+                    }
+                }
             }
         }
     }

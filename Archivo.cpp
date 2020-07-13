@@ -70,7 +70,44 @@ Lista <string*>* Archivo::separar_actores(string actores_pelicula){
 
 	return l_actores;
 }
-Lista<Pelicula*> Archivo::carga_lista_recomendadas(Lista<Pelicula*> &lista_vistas, Lista<Pelicula*> &lista_no_vistas)
+Lista<Pelicula*> Archivo::carga_lista_recomendadas(Lista<Pelicula*> &lista_vistas, Lista<Pelicula*> &lista_no_vistas){
+
+    	Lista<Pelicula*> lista_recomendadas;
+	for (unsigned i = 1; i <= lista_no_vistas.obtener_tamanio(); i++ ){
+		if(lista_no_vistas.obtener_dato(i)->obtener_puntaje() >= 7){
+			lista_recomendadas.insertar(lista_no_vistas.obtener_dato(i));
+		}else{
+			for(unsigned j = 1; j <= lista_vistas.obtener_tamanio(); j++){
+				if(lista_no_vistas.obtener_dato(i)->obtener_genero() == lista_vistas.obtener_dato(j)->obtener_genero() ){
+					if( lista_no_vistas.obtener_dato(i)->obtener_director() == lista_vistas.obtener_dato(j)->obtener_director()  ){
+						lista_recomendadas.insertar( lista_no_vistas.obtener_dato(i) );
+					}else{
+						Lista<string*>* puntero_vistas;
+						Lista<string*>* puntero_no_vistas;
+						puntero_vistas = lista_vistas.obtener_dato(j)->obtener_actores();
+						puntero_no_vistas = lista_no_vistas.obtener_dato(i)->obtener_actores();
+
+						for(unsigned k = 1; k <= puntero_no_vistas->obtener_tamanio(); k++){
+							for(unsigned l = 1; l <= puntero_vistas->obtener_tamanio(); l++){
+								if(*puntero_no_vistas->obtener_dato(k) == *puntero_vistas->obtener_dato(l)){
+									lista_recomendadas.insertar( lista_no_vistas.obtener_dato(i));
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+					
+
+	return lista_recomendadas;
+
+}
+
+
+
+/*
 {
     Lista<Pelicula*> lista_recomendadas;
     for (int i = 1; i <= lista_no_vistas.obtener_tamanio(); i++) {
@@ -102,4 +139,4 @@ Lista<Pelicula*> Archivo::carga_lista_recomendadas(Lista<Pelicula*> &lista_vista
         }
     }
     return lista_recomendadas;
-}
+}*/

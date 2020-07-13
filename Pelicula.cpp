@@ -1,31 +1,32 @@
 #include "Pelicula.h"
 
 Pelicula::Pelicula(){
-    director = "0";
-    nombre = "0";
-    valoracion = 0;
-    recaudacion = 0;
+    director = "";
+    titulo = "";
+    puntaje = 0;
+    genero = "";
+}
+Pelicula::Pelicula(string titulo, string genero, int puntaje, string director, Lista<string*>* lista_actores) {
+    this -> titulo = titulo;
+    this -> genero = genero;
+    this -> puntaje = puntaje;
+    this -> director = director;
+    this -> lista_actores = lista_actores;
+}
+string Pelicula::obtener_titulo(){
+    return titulo;
 }
 
-Pelicula::Pelicula(string direc, string nom, float val, int rec){
-    director= direc;
-    nombre = nom;
-    valoracion = val;
-    recaudacion = rec;
+string Pelicula::obtener_genero(){
+    return genero;
 }
 
+int Pelicula::obtener_puntaje(){
+    return puntaje;
+}
 string Pelicula::obtener_director(){
     return director;
 }
-
-string Pelicula::obtener_nombre(){
-    return nombre;
-}
-
-float Pelicula::obtener_valoracion(){
-    return valoracion;
-}
-
-int Pelicula::obtener_recaudacion(){
-    return recaudacion;
+Lista <string*>* Pelicula::obtener_actores(){
+	return lista_actores;
 }

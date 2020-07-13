@@ -2,9 +2,8 @@
 
 
 void Menu::mostrar_menu(Lista<Pelicula*> &lista_peliculas_vistas, Lista<Pelicula*> &lista_peliculas_no_vistas, Lista<Pelicula*> &lista_recomendadas){
-
+	int opcion;
 	while(salir){
-		int opcion;
 		cout << "============================= BIENVENIDO AL PROGRAMA =============================" << endl << endl;
 		cout << "1. Ver la lista de peliculas vistas." << endl;
 		cout << "2. Ver la lista de peliculas no vistas." << endl;

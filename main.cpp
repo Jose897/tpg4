@@ -15,10 +15,5 @@ int main()
     Lista<Pelicula*> lista_recomendadas = carga.carga_lista_recomendadas(lista_peliculas_vistas, lista_peliculas_no_vistas);
     Menu menu;
     menu.mostrar_menu(lista_peliculas_vistas, lista_peliculas_no_vistas, lista_recomendadas);
-<<<<<<< HEAD
-    
-
-=======
->>>>>>> d9ed53abec66fedc0f1c8627de95dba3b32e3afb
     return 0;
 }

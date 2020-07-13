@@ -9,7 +9,7 @@ using namespace std;
 class Menu{
 	private:
 
-	bool salir;
+	bool salir = true;
 
 	public:
         // PRE: Recibe un numero entre 1 y 3

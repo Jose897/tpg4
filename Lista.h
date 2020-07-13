@@ -15,12 +15,12 @@ class Lista
 private:
     // Primer elemento de la lista
     Nodo<Dato>* primero;
-    // Tama�o de la lista
+    // Tamanio de la lista
     unsigned tam;
 public:
     // Constructor
     // PRE: Ninguna
-    // POST: construye una lista vac�a
+    // POST: construye una lista vacia
     // - primero apunta a nulo
     // - tam = 0
     Lista();
@@ -29,34 +29,29 @@ public:
     // POST: Libera todos los recursos de la lista
     ~Lista();
     // Agregar un elemento a la lista
-    // PRE: lista creada y d v�lido
+    // PRE: lista creada y d valido
     // POST: agrega un dato dentro de un nodo al principio
     // - modifica el primero
     // - tam se incrementa en 1
     void insertar(Dato d);
-    // Obtener el tama�o de la lista
+    // Obtener el tamanio de la lista
     // PRE: Lista creada
-    // POST: devuelve el tama�o de la lista (cantidad de nodos)
+    // POST: devuelve el tamanio de la lista (cantidad de nodos)
     unsigned obtener_tamanio();
-    // Obtener el dato que est� en la posici�n pos
-    // PRE: - lista creada y no vac�a
+    // Obtener el dato que esta en la posicion pos
+    // PRE: - lista creada y no vacia
     // - 0 < pos <= tam
-    // POST: devuelve el dato que est� en la posici�n pos
+    // POST: devuelve el dato que esta en la posicion pos
     // se toma 1 como el primero
     Dato obtener_dato(unsigned pos);
-    //Imprimir la lista por pantalla
-    //PRE: lista creada y no vacia
-    //POST: imprimir la lista por pantalla
-    void imprimir_lista();
-    void imprimir_actores();
-    // �Lista vacia?
+    // Lista vacia?
     // PRE: Lista creada
     // POST: T si es vacia, F sino
     bool lista_vacia();
-// Borrado del nodo que est� en la posici�n pos
-    // PRE: - lista creada y no vac�a
+    // Borrado del nodo que esta en la posicion pos
+    // PRE: - lista creada y no vacia
     // - 0 < pos <= tam
-    // POST: libera el nodo que est� en la posici�n pos
+    // POST: libera el nodo que esta en la posicion pos
     // se toma 1 como el primero
     void borrar_dato(unsigned pos);
 };
@@ -109,43 +104,6 @@ Dato Lista<Dato>::obtener_dato(unsigned pos)
 }
 
 template < typename Dato >
-void Lista<Dato>::imprimir_lista()
-{
-	int i = 1;
-	Nodo<Dato>*p = primero;
-
-
-	std::cout << "\n";
-	while(p != NULL)
-	{
-        std::cout << i << "- "  << std::endl;
-		std::cout << "Titulo: " << p -> obtener_dato() -> obtener_titulo() << std::endl;
-		std::cout << "Genero: " << p -> obtener_dato() -> obtener_genero() << std::endl;
-		std::cout << "Puntaje: " << p -> obtener_dato() -> obtener_puntaje() << std::endl;
-		std::cout << "Director: " << p -> obtener_dato() -> obtener_director() << std::endl;
-		std::cout << "Actores: " << p -> obtener_dato() -> obtener_actores().imprimir_actores();
-		p = p -> obtener_siguiente();
-		i++;
-	}
-}
-
-template < typename Dato >
-void Lista<Dato>::imprimir_actores()
-{
-	std::string actores;
-	Nodo<Dato>*paux = primero;
-
-	while(paux != NULL){
-
-		actores += paux -> obtener_dato();
-		actores += " ";
-		paux = paux -> obtener_siguiente();
-
-	}
-	std::cout << actores << std::endl;
-}
-
-template < typename Dato >
 unsigned Lista<Dato>::obtener_tamanio()
 {
     return tam;
@@ -167,10 +125,15 @@ void Lista<Dato>::borrar_dato(unsigned pos)
                 aux = aux->obtener_siguiente();
             aux->asignar_siguiente(aux->obtener_siguiente());
         }
-        Nodo<Dato>* borrar = aux;
-
-        delete borrar;
+        delete aux;
         tam--;
+    }
+    int x = 0;
+    Dato d = obtener_dato(x);
+    while(d != NULL && !lista_vacia()){
+    	delete d;
+    	x++;
+    	d = obtener_dato(x);
     }
 }
 

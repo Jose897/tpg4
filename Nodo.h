@@ -24,14 +24,14 @@ public:
     // PRE: Nodo creado
     // POST: No hace nada
     ~Nodo();
-// Setea el dato (lo cambia)
-// PRE: el nodo tiene que estar creado
-// d tiene que ser un dato v�lido
-// POST: el nodo queda con el dato d
+    // Setea el dato (lo cambia)
+    // PRE: el nodo tiene que estar creado
+    // d tiene que ser un dato valido
+    // POST: el nodo queda con el dato d
     void asignar_dato(Dato d);
     // Setear el puntero al siguiente nodo
-    // PRE: nodo creado y ps v�lido
-    // POST: el puntero al siguiente apuntar� a ps
+    // PRE: nodo creado y ps valido
+    // POST: el puntero al siguiente apuntara a ps
     void asignar_siguiente(Nodo* ps);
     // Obtener el dato
     // PRE: nodo creado
@@ -40,7 +40,7 @@ public:
     // Obtener el puntero al nodo siguiente
     // PRE: nodo creado
     // POST: Devuelve el puntero al siguiente nodo
-    // si es el �ltimo devuelve NULL
+    // si es el ultimo devuelve NULL
     Nodo* obtener_siguiente();
 
 };

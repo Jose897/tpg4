@@ -48,12 +48,12 @@ void Menu:: imprimir_peliculas(Lista<Pelicula*> &lista_peliculas) {
         cout << "Actores: ";
        	Lista <string*>* puntero_actores;
 
-	/*for( int j = 1 ; j <= puntero_actores->obtener_tamanio() ; j++){
+	for( int j = 1 ; j <= puntero_actores->obtener_tamanio() ; j++){
 		puntero_actores = lista_peliculas.obtener_dato(i)->obtener_actores();
 		cout << " " <<*puntero_actores->obtener_dato(j);
 	}
 
-	cout << endl;*/
+	cout << endl;
     }
 }
 

@@ -71,3 +71,26 @@ Lista <string*> Archivo::separar_actores(string actores_pelicula){
 
 	return l_actores;
 }
+
+Lista<Pelicula*> Archivo::carga_recomendadas(Lista<Pelicula*> &lista_vistas, Lista<Pelicula*> &lista_no_vistas){
+    Lista<Pelicula*> lista_recomendadas;
+    for (int i = 1; i <= lista_no_vistas.obtener_tamanio(); i++) {
+        for( unsigned j = 1; j<=lista_vistas.obtener_tamanio(); j++) {
+            if( lista_no_vistas.obtener_dato(i)->obtener_puntaje() >= 7){
+                lista_recomendadas.insertar(lista_no_vistas.obtener_dato(i));
+                break;
+            }
+            else if(lista_vistas.obtener_dato(j)->obtener_director() == lista_no_vistas.obtener_dato(i)->obtener_director()){
+                cout << "El director coincide y es: " << lista_no_vistas.obtener_dato(i)->obtener_director() << ".\n";
+                lista_recomendadas.insertar(lista_no_vistas.obtener_dato(i));
+                break;
+            }
+            else if(lista_vistas.obtener_dato(j)->obtener_genero() == lista_no_vistas.obtener_dato(i)->obtener_genero()){
+                lista_recomendadas.insertar(lista_no_vistas.obtener_dato(i));
+                break;
+//Falta agregar recomendadas en base a los actores (falta terminar lista actores para eso)
+            }
+        }
+    }
+    return lista_recomendadas;
+}

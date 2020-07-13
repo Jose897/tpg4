@@ -1,5 +1,24 @@
 #include "Menu.h"
 
+<<<<<<< HEAD
+
+void Menu::mostrar_menu(Lista<Pelicula*> &lista_peliculas_vistas, Lista<Pelicula*> &lista_peliculas_no_vistas, Lista<Pelicula*> &lista_recomendadas){
+	int opcion;
+	while(salir){
+		cout << "============================= BIENVENIDO AL PROGRAMA =============================" << endl << endl;
+		cout << "1. Ver la lista de peliculas vistas." << endl;
+		cout << "2. Ver la lista de peliculas no vistas." << endl;
+		cout << "3. Ver la lista de peliculas recomendadas." << endl;
+		cout << "4. Salir." << endl << endl;
+		cout << "Por favor eliga la opcion que desea: " << endl;
+		cin >> opcion;
+    	while(!opcion_valida(opcion)){
+    		cout << "Por favor ingrese una opcion valida: ";
+    		cin >> opcion;
+    	}
+    	procesar_opcion(opcion,lista_peliculas_vistas, lista_peliculas_no_vistas, lista_recomendadas);
+	}
+=======
 void Menu::mostrar_menu(Lista<Pelicula*> &lista_peliculas_vistas, Lista<Pelicula*> &lista_peliculas_no_vistas, Lista<Pelicula*> &lista_recomendadas) {
 
     while (salir) {
@@ -21,6 +40,7 @@ void Menu::mostrar_menu(Lista<Pelicula*> &lista_peliculas_vistas, Lista<Pelicula
             }
         }while (!opcion_valida(opcion));
     }
+>>>>>>> d9ed53abec66fedc0f1c8627de95dba3b32e3afb
 }
 
 bool Menu::opcion_valida(int entrada){

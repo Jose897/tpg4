@@ -105,7 +105,7 @@ Lista<Pelicula*> Archivo::carga_lista_recomendadas(Lista<Pelicula*> &lista_vista
 	return lista_recomendadas;
 }
 
-/+{
+/*{
     Lista<Pelicula*> lista_recomendadas;
     for (int i = 1; i <= lista_no_vistas.obtener_tamanio(); i++) {
         for( unsigned j = 1; j<=lista_vistas.obtener_tamanio(); j++) {

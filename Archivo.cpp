@@ -1,10 +1,3 @@
-/*
- * Archivo.cpp
- *
- *  Created on: 2 jul. 2020
- *      Author: Santi
- */
-
 #include "Archivo.h"
 #include <fstream>
 Archivo::Archivo() {

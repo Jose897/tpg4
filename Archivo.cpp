@@ -102,35 +102,33 @@ Lista <string*>* Archivo::separar_actores(string actores_pelicula){
 		}
     }
 	return lista_recomendadas;
-}
-*/
+}*/
+
 Lista<Pelicula*> Archivo::carga_lista_recomendadas(Lista<Pelicula*> &lista_vistas, Lista<Pelicula*> &lista_no_vistas){
     Lista<Pelicula*> lista_recomendadas;
     for (int i = 1; i <= lista_no_vistas.obtener_tamanio(); i++) {
-        bool coincidencia = false;
-        for(int j = 1; j<=lista_vistas.obtener_tamanio() && !coincidencia; j++) {
-            if( lista_no_vistas.obtener_dato(i)->obtener_puntaje() >= 7){
-                lista_recomendadas.insertar(lista_no_vistas.obtener_dato(i));
-                coincidencia = true;
-            }
-            else if(lista_vistas.obtener_dato(j)->obtener_genero() == lista_no_vistas.obtener_dato(i)->obtener_genero()) {
-                lista_recomendadas.insertar(lista_no_vistas.obtener_dato(i));
-                if(lista_vistas.obtener_dato(j)->obtener_director() == lista_no_vistas.obtener_dato(i)->obtener_director()){
+        if( lista_no_vistas.obtener_dato(i)->obtener_puntaje() >= 7){
+            lista_recomendadas.insertar(lista_no_vistas.obtener_dato(i));
+        } else{
+            for(int j = 1; j<=lista_vistas.obtener_tamanio(); j++) {
+                if(lista_vistas.obtener_dato(j)->obtener_genero() == lista_no_vistas.obtener_dato(i)->obtener_genero()) {
                     lista_recomendadas.insertar(lista_no_vistas.obtener_dato(i));
-                    coincidencia = true;
-                }
-                else{
-                    for (int k = 1; k <= lista_no_vistas.obtener_dato(i)->obtener_actores()->obtener_tamanio() && !coincidencia; k++){
-                        for (int z = 1; z <= lista_vistas.obtener_dato(j)->obtener_actores()->obtener_tamanio() && !coincidencia; z++){
-                            if (*lista_no_vistas.obtener_dato(i)->obtener_actores()->obtener_dato(k) == *lista_vistas.obtener_dato(j)->obtener_actores()->obtener_dato(z)){
-                                lista_recomendadas.insertar(lista_no_vistas.obtener_dato(i));
-                                coincidencia = true;
-            }
+                    if(lista_vistas.obtener_dato(j)->obtener_director() == lista_no_vistas.obtener_dato(i)->obtener_director()){
+                        lista_recomendadas.insertar(lista_no_vistas.obtener_dato(i));
+                    }
+                    else{
+                        for (int k = 1; k <= lista_no_vistas.obtener_dato(i)->obtener_actores()->obtener_tamanio(); k++){
+                            for (int z = 1; z <= lista_vistas.obtener_dato(j)->obtener_actores()->obtener_tamanio(); z++){
+                                if (*lista_no_vistas.obtener_dato(i)->obtener_actores()->obtener_dato(k) == *lista_vistas.obtener_dato(j)->obtener_actores()->obtener_dato(z)){
+                                    lista_recomendadas.insertar(lista_no_vistas.obtener_dato(i));
+                                }
+                            }
                         }
                     }
                 }
             }
         }
+
     }
     return lista_recomendadas;
 }

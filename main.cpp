@@ -1,6 +1,7 @@
 #include "Archivo.h"
 #include <string>
 #include "Menu.h"
+
 using namespace std;
 const string NOMBRE_ARCHIVO_NO_VISTAS = "peliculas_no_vistas.txt";
 const string NOMBRE_ARCHIVO_VISTAS = "peliculas_vistas.txt";
@@ -14,5 +15,6 @@ int main()
     Lista<Pelicula*> lista_recomendadas = carga.carga_lista_recomendadas(lista_peliculas_vistas, lista_peliculas_no_vistas);
     Menu menu;
     menu.mostrar_menu(lista_peliculas_vistas, lista_peliculas_no_vistas, lista_recomendadas);
+
     return 0;
 }

@@ -38,8 +38,9 @@ void Menu::procesar_opcion(int opcion,Lista<Pelicula*> &lista_peliculas_vistas, 
 }
 
 void Menu:: imprimir_peliculas(Lista<Pelicula*> &lista_peliculas) {
+    cout << "En base a sus peliculas vistas y calificaciones podemos recomendarte las siguintes peliculas" << endl;
     for (int i = 1; i <= lista_peliculas.obtener_tamanio(); i++) {
-        cout << i << "- " << std::endl;
+        cout << i << "- " << endl;
         cout << "Titulo: " << lista_peliculas.obtener_dato(i)->obtener_titulo() << endl;
         cout << "Genero: " << lista_peliculas.obtener_dato(i)->obtener_genero() << endl;
         cout << "Puntaje: " << lista_peliculas.obtener_dato(i)->obtener_puntaje() << endl;
@@ -51,7 +52,3 @@ void Menu:: imprimir_peliculas(Lista<Pelicula*> &lista_peliculas) {
 	cout << endl;
     }
 }
-
-
-
-

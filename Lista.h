@@ -1,9 +1,3 @@
-/*
- * Lista.h
- *
- *  Created on: 2 jul. 2020
- *      Author: Santi
- */
 #ifndef LISTA_H_
 #define LISTA_H_
 

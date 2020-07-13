@@ -1,10 +1,3 @@
-/*
- * Pelicula.h
- *
- *  Created on: 2 jul. 2020
- *      Author: Santi
- */
-
 #ifndef PELICULA_H_
 #define PELICULA_H_
 

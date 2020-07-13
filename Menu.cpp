@@ -1,5 +1,6 @@
 #include "Menu.h"
 
+<<<<<<< HEAD
 
 void Menu::mostrar_menu(Lista<Pelicula*> &lista_peliculas_vistas, Lista<Pelicula*> &lista_peliculas_no_vistas, Lista<Pelicula*> &lista_recomendadas){
 	int opcion;
@@ -17,6 +18,29 @@ void Menu::mostrar_menu(Lista<Pelicula*> &lista_peliculas_vistas, Lista<Pelicula
     	}
     	procesar_opcion(opcion,lista_peliculas_vistas, lista_peliculas_no_vistas, lista_recomendadas);
 	}
+=======
+void Menu::mostrar_menu(Lista<Pelicula*> &lista_peliculas_vistas, Lista<Pelicula*> &lista_peliculas_no_vistas, Lista<Pelicula*> &lista_recomendadas) {
+
+    while (salir) {
+        int opcion;
+        cout << "============================= BIENVENIDO AL PROGRAMA =============================" << endl << endl;
+        cout << "1. Ver la lista de peliculas vistas." << endl;
+        cout << "2. Ver la lista de peliculas no vistas." << endl;
+        cout << "3. Ver la lista de peliculas recomendadas." << endl;
+        cout << "4. Salir." << endl << endl;
+        cout << "Por favor eliga la opcion que desea: " << endl << flush;
+        do {
+            cin >> opcion;
+            if (cin.good() && opcion_valida(opcion)) {
+                procesar_opcion(opcion, lista_peliculas_vistas, lista_peliculas_no_vistas, lista_recomendadas);
+            } else {
+                cin.clear();
+                cin.ignore();
+                cout << "Por favor ingrese una opcion valida: " << endl;
+            }
+        }while (!opcion_valida(opcion));
+    }
+>>>>>>> d9ed53abec66fedc0f1c8627de95dba3b32e3afb
 }
 
 bool Menu::opcion_valida(int entrada){
@@ -28,8 +52,7 @@ void Menu::procesar_opcion(int opcion,Lista<Pelicula*> &lista_peliculas_vistas, 
 	switch(opcion){
 		case 1: imprimir_peliculas(lista_peliculas_vistas); break;
 		case 2: imprimir_peliculas(lista_peliculas_no_vistas); break;
-		case 3: imprimir_peliculas(lista_recomendadas);
-            break;
+		case 3: imprimir_peliculas(lista_recomendadas); break;
 		case 4: salir = false ; break;
 	}
 }

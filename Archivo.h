@@ -1,10 +1,3 @@
-/*
- * Archivo.h
- *
- *  Created on: 2 jul. 2020
- *      Author: Santi
- */
-
 #ifndef ARCHIVO_H_
 #define ARCHIVO_H_
 

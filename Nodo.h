@@ -1,10 +1,3 @@
-/*
- * Nodo.h
- *
- *  Created on: 2 jul. 2020
- *      Author: Santi
- */
-
 #ifndef NODO_H
 #define NODO_H
 

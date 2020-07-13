@@ -52,9 +52,9 @@ void Archivo::carga_peliculas(const string nombre_archivo, Lista<Pelicula*> &lis
 
 
 
-Lista <string*>* Archivo::separar_actores(string actores_pelicula){
+Lista <string*> Archivo::separar_actores(string actores_pelicula){
 
-	Lista <string*>* l_actores = new Lista <string*>;
+	Lista <string*> l_actores;
 
 	istringstream isstream(actores_pelicula);
 
@@ -62,12 +62,11 @@ Lista <string*>* Archivo::separar_actores(string actores_pelicula){
 
 		string actor;
 
-	    	isstream >> actor;
-		
-		if( (int)actor[0] != 0 ){
-	    		string* actor_puntero = new string(actor);
-	    		l_actores->insertar(actor_puntero);
-		}
+	    isstream >> actor;
+
+	    string* actor_puntero = new string(actor);
+
+	    l_actores.insertar(actor_puntero);
 	}
 
 	return l_actores;

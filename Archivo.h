@@ -18,7 +18,7 @@ private:
 public:
     Archivo();
     void carga_peliculas(const string, Lista<Pelicula*> &lista);
-    Lista <string*>* separar_actores(string);
+    Lista <string*> separar_actores(string);
     ~Archivo();
 
 };

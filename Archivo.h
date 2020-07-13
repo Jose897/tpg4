@@ -19,7 +19,6 @@ public:
     Archivo();
     void carga_peliculas(const string, Lista<Pelicula*> &lista);
     Lista <string*> separar_actores(string);
-    Lista<Pelicula*> carga_recomendadas(Lista<Pelicula*> &lista_vistas, Lista<Pelicula*> &lista_no_vistas);
     ~Archivo();
 
 };

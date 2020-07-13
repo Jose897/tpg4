@@ -23,7 +23,7 @@ public:
     	// metodo cargar_peliculas
     	// PRE: Ninguna, sino existe el archivo lanza excepcion
     	// POST: construye el objeto Pelicula y lo guarda en una lista
-    	void carga_peliculas(const string, Lista<Pelicula*> &lista);
+    	void carga_peliculas(string, Lista<Pelicula*> &lista);
     	// Metodo separar actores
     	// PRE: Recibir un string
     	// POST: construye una lista con punteros a los actores y la guarda en el objeto 		//pelicula

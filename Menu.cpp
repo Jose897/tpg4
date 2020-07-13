@@ -21,10 +21,7 @@ void Menu::mostrar_menu(Lista<Pelicula*> &lista_peliculas_vistas, Lista<Pelicula
 }
 
 bool Menu::opcion_valida(int entrada){
-    if (entrada < 1 || entrada > 4){
-        return false;
-    }
-    return true;
+    return !(entrada < 1 || entrada > 4);
 }
 
 void Menu::procesar_opcion(int opcion,Lista<Pelicula*> &lista_peliculas_vistas, Lista<Pelicula*> &lista_peliculas_no_vistas, Lista<Pelicula*> &lista_recomendadas){

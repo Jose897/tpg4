@@ -113,21 +113,19 @@ Lista<Pelicula*> Archivo::carga_lista_recomendadas(Lista<Pelicula*> &lista_vista
                 lista_recomendadas.insertar(lista_no_vistas.obtener_dato(i));
                 coincidencia = true;
             }
-            else if(lista_vistas.obtener_dato(j)->obtener_director() == lista_no_vistas.obtener_dato(i)->obtener_director()){
-                cout << "El director coincide y es: " << lista_no_vistas.obtener_dato(i)->obtener_director() << ".\n";
+            else if(lista_vistas.obtener_dato(j)->obtener_genero() == lista_no_vistas.obtener_dato(i)->obtener_genero()) {
                 lista_recomendadas.insertar(lista_no_vistas.obtener_dato(i));
-                coincidencia = true;
+                if(lista_vistas.obtener_dato(j)->obtener_director() == lista_no_vistas.obtener_dato(i)->obtener_director()){
+                    lista_recomendadas.insertar(lista_no_vistas.obtener_dato(i));
+                    coincidencia = true;
+                }
+                else{
+                    for (int k = 1; k <= lista_no_vistas.obtener_dato(i)->obtener_actores()->obtener_tamanio() && !coincidencia; k++){
+                        for (int z = 1; z <= lista_vistas.obtener_dato(j)->obtener_actores()->obtener_tamanio() && !coincidencia; z++){
+                            if (*lista_no_vistas.obtener_dato(i)->obtener_actores()->obtener_dato(k) == *lista_vistas.obtener_dato(j)->obtener_actores()->obtener_dato(z)){
+                                lista_recomendadas.insertar(lista_no_vistas.obtener_dato(i));
+                                coincidencia = true;
             }
-            else if(lista_vistas.obtener_dato(j)->obtener_genero() == lista_no_vistas.obtener_dato(i)->obtener_genero()){
-                lista_recomendadas.insertar(lista_no_vistas.obtener_dato(i));
-                coincidencia = true;
-            }
-            else{
-                for (int k = 1; k <= lista_no_vistas.obtener_dato(i)->obtener_actores()->obtener_tamanio() && !coincidencia; k++){
-                    for (int z = 1; z <= lista_vistas.obtener_dato(j)->obtener_actores()->obtener_tamanio() && !coincidencia; z++){
-                        if (*lista_no_vistas.obtener_dato(i)->obtener_actores()->obtener_dato(k) == *lista_vistas.obtener_dato(j)->obtener_actores()->obtener_dato(z)){
-                            lista_recomendadas.insertar(lista_no_vistas.obtener_dato(i));
-                            coincidencia = true;
                         }
                     }
                 }

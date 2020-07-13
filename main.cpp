@@ -11,7 +11,8 @@ int main()
     Lista<Pelicula*> lista_peliculas_no_vistas;
     carga.carga_peliculas(NOMBRE_ARCHIVO_VISTAS, lista_peliculas_vistas);
     carga.carga_peliculas(NOMBRE_ARCHIVO_NO_VISTAS, lista_peliculas_no_vistas);
+    Lista<Pelicula*> lista_recomendadas = carga.carga_lista_recomendadas(lista_peliculas_vistas, lista_peliculas_no_vistas);
     Menu menu;
-    menu.mostrar_menu(lista_peliculas_vistas, lista_peliculas_no_vistas);
+    menu.mostrar_menu(lista_peliculas_vistas, lista_peliculas_no_vistas, lista_recomendadas);
     return 0;
 }

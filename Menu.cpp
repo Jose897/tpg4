@@ -1,7 +1,7 @@
 #include "Menu.h"
 
 
-void Menu::mostrar_menu(Lista<Pelicula*> &lista_peliculas_vistas, Lista<Pelicula*> &lista_peliculas_no_vistas){
+void Menu::mostrar_menu(Lista<Pelicula*> &lista_peliculas_vistas, Lista<Pelicula*> &lista_peliculas_no_vistas, Lista<Pelicula*> &lista_recomendadas){
 
 	while(salir){
 		int opcion;
@@ -16,7 +16,7 @@ void Menu::mostrar_menu(Lista<Pelicula*> &lista_peliculas_vistas, Lista<Pelicula
     		cout << "Por favor ingrese una opcion valida: ";
     		cin >> opcion;
     	}
-    	procesar_opcion(opcion,lista_peliculas_vistas, lista_peliculas_no_vistas);
+    	procesar_opcion(opcion,lista_peliculas_vistas, lista_peliculas_no_vistas, lista_recomendadas);
 	}
 }
 
@@ -27,14 +27,12 @@ bool Menu::opcion_valida(int entrada){
     return true;
 }
 
-void Menu::procesar_opcion(int opcion,Lista<Pelicula*> &lista_peliculas_vistas, Lista<Pelicula*> &lista_peliculas_no_vistas){
+void Menu::procesar_opcion(int opcion,Lista<Pelicula*> &lista_peliculas_vistas, Lista<Pelicula*> &lista_peliculas_no_vistas, Lista<Pelicula*> &lista_recomendadas){
 
 	switch(opcion){
 		case 1: imprimir_peliculas(lista_peliculas_vistas); break;
 		case 2: imprimir_peliculas(lista_peliculas_no_vistas); break;
-		case 3:
-            carga_lista_recomendadas(lista_peliculas_vistas, lista_peliculas_no_vistas);
-            imprimir_peliculas(lista_recomendadas);
+		case 3: imprimir_peliculas(lista_recomendadas);
             break;
 		case 4: salir = false ; break;
 	}
@@ -50,35 +48,15 @@ void Menu:: imprimir_peliculas(Lista<Pelicula*> &lista_peliculas) {
         cout << "Actores: ";
        	Lista <string*>* puntero_actores;
 
-	for( int j = 1 ; j <= puntero_actores->obtener_tamanio() ; j++){
+	/*for( int j = 1 ; j <= puntero_actores->obtener_tamanio() ; j++){
 		puntero_actores = lista_peliculas.obtener_dato(i)->obtener_actores();
 		cout << " " <<*puntero_actores->obtener_dato(j);
 	}
 
-	cout << endl;
+	cout << endl;*/
     }
 }
 
 
 
-void Menu::carga_lista_recomendadas(Lista<Pelicula*> &lista_vistas, Lista<Pelicula*> &lista_no_vistas)
-{
-    for (int i = 1; i <= lista_no_vistas.obtener_tamanio(); i++) {
-        for( unsigned j = 1; j<=lista_vistas.obtener_tamanio(); j++) {
-                if( lista_no_vistas.obtener_dato(i)->obtener_puntaje() >= 7){
-                    lista_recomendadas.insertar(lista_no_vistas.obtener_dato(i));
-                    break;
-                }
-                else if(lista_vistas.obtener_dato(j)->obtener_director() == lista_no_vistas.obtener_dato(i)->obtener_director()){
-                    cout << "El director coincide y es: " << lista_no_vistas.obtener_dato(i)->obtener_director() << ".\n";
-                    lista_recomendadas.insertar(lista_no_vistas.obtener_dato(i));
-                    break;
-                }
-                else if(lista_vistas.obtener_dato(j)->obtener_genero() == lista_no_vistas.obtener_dato(i)->obtener_genero()){
-                    lista_recomendadas.insertar(lista_no_vistas.obtener_dato(i));
-                    break;
-//Falta agregar recomendadas en base a los actores (falta terminar lista actores para eso)
-            }
-        }
-    }
-}
+

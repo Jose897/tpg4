@@ -75,7 +75,6 @@ Lista<Pelicula*> Archivo::carga_lista_recomendadas(Lista<Pelicula*> &lista_vista
         else{
             for(int j = 1; j <= int(lista_vistas.obtener_tamanio()); j++) {
                 if(lista_vistas.obtener_dato(j)->obtener_genero() == lista_no_vistas.obtener_dato(i)->obtener_genero()) {
-                    lista_recomendadas.insertar(lista_no_vistas.obtener_dato(i));
                     if(lista_vistas.obtener_dato(j)->obtener_director() == lista_no_vistas.obtener_dato(i)->obtener_director()){
                         lista_recomendadas.insertar(lista_no_vistas.obtener_dato(i));
                     }

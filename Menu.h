@@ -26,7 +26,6 @@ class Menu{
         //PRE: lista creada y no vacia
         //POST: imprimir la lista por pantalla
         void imprimir_peliculas(Lista<Pelicula*> &);
-
 };
 
 

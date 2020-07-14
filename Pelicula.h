@@ -24,6 +24,9 @@ public:
     	// PRE: Recibir datos validos
     	// POST: Crea un objeto pelicula con todos los datos de la misma
     	Pelicula(string titulo, string genero, int puntaje, string director, Lista<string*>* );
+        // Destructor
+        // PRE: Ninguna
+        // POST: Elimina la lista y destruye el objeto
         ~Pelicula();
     	// Metodo obtener titulo
     	// PRE: Ninguna

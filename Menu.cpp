@@ -50,13 +50,16 @@ void Menu::procesar_opcion(int opcion,Lista<Pelicula*> &lista_peliculas_vistas, 
 		case 1: imprimir_peliculas(lista_peliculas_vistas); break;
 		case 2: imprimir_peliculas(lista_peliculas_no_vistas); break;
 		case 3: imprimir_peliculas(lista_recomendadas); break;
-		case 4: salir = false ; break;
+		case 4:
+		cout << endl << "Gracias por utilizar el programa. Hasta luego." << endl;
+		salir = false ;
+		break;
 	}
 }
 
 void Menu:: imprimir_peliculas(Lista<Pelicula*> &lista_peliculas) {
     cout << "En base a sus peliculas vistas y calificaciones podemos recomendarte las siguintes peliculas" << endl;
-    for (int i = 1; i <= lista_peliculas.obtener_tamanio(); i++) {
+    for (int i = 1; i <= int(lista_peliculas.obtener_tamanio()); i++) {
         cout << i << "- " << endl;
         cout << "Titulo: " << lista_peliculas.obtener_dato(i)->obtener_titulo() << endl;
         cout << "Genero: " << lista_peliculas.obtener_dato(i)->obtener_genero() << endl;

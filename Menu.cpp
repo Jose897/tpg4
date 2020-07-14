@@ -35,6 +35,7 @@ void Menu::procesar_opcion(int opcion,Lista<Pelicula*> &lista_peliculas_vistas, 
 		case 4:
 		cout << endl << "Gracias por utilizar el programa. Hasta luego." << endl;
 		salir = false;
+		break;
     }
 }
 

@@ -13,6 +13,9 @@ Pelicula::Pelicula(string titulo, string genero, int puntaje, string director, L
     this -> director = director;
     this -> lista_actores = lista_actores;
 }
+Pelicula::~Pelicula(){
+    delete lista_actores;
+}
 string Pelicula::obtener_titulo(){
     return titulo;
 }

@@ -3,21 +3,20 @@
 
 #include "Pelicula.h"
 #include "Lista.h"
+#include "Nodo.h"
 #include <iostream>
 using namespace std;
-/*La idea del menu seria que el main no tenga codigo y todo lo que serian el manejo de las opciones y
-lo que ve el usuario se haga con esta clase. Deberia tener como atributos las listas para que a la hora de
-mostrarlas acceda a ellas. Eso lo agregamos cuando tengamos las listas ya armadas. (Falta armar la de recomendadas)*/
+
 class Menu{
 	private:
 		bool salir = true;
-public:
+	public:
         // PRE: Recibe un numero entre 1 y 3
         // POST: Devuelve la opcion que selecciona el usuario
-        void mostrar_menu(Lista<Pelicula*> &, Lista<Pelicula*> &, Lista<Pelicula*> &);
+        void mostrar_menu(Lista<Pelicula*>* &, Lista<Pelicula*>* &, Lista<Pelicula*>* &);
         // PRE: -
         // POST: Realiza la tarea que selecciono el  usuario
-        void procesar_opcion(int opcion,Lista<Pelicula*> &, Lista<Pelicula*> &, Lista<Pelicula*> &);
+        void procesar_opcion(int opcion,Lista<Pelicula*>* &, Lista<Pelicula*>* &, Lista<Pelicula*>* &);
         // PRE: Recibe la opcion que selecciona el usuario
         // POST: True si es opcion valida
         // False si es una opcion invalida
@@ -25,7 +24,15 @@ public:
         //Imprimir la lista por pantalla
         //PRE: lista creada y no vacia
         //POST: imprimir la lista por pantalla
-        void imprimir_peliculas(Lista<Pelicula*> &);
+        void imprimir_peliculas(Lista<Pelicula*>* &);
+	//
+	//
+	//
+	void borrar_lista(Lista<Pelicula*>* &);
+	//
+	//
+	//
+	void asignar_null(Lista<Pelicula*>* &);
 
 };
 

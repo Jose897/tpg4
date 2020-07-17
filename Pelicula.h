@@ -31,6 +31,10 @@ public:
     	// PRE: Recibir datos validos
     	// POST: Crea un objeto pelicula con todos los datos de la misma
     	Pelicula(string titulo, string genero, int puntaje, string director, Lista<string*>* );
+	//
+	//
+	//
+	~Pelicula();
     	// Metodo obtener titulo
     	// PRE: Ninguna
     	// POST: Retorna el titulo de la pelicula

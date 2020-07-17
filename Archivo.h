@@ -12,9 +12,12 @@
 #include <string>
 #include "Pelicula.h"
 #include <sstream>
+
 using namespace std;
+
 class Archivo{
 private:
+	bool excepcion;
 public:
     	// Constructor
 	// PRE: Ninguna
@@ -23,7 +26,7 @@ public:
     	// metodo cargar_peliculas
     	// PRE: Ninguna, sino existe el archivo lanza excepcion
     	// POST: construye el objeto Pelicula y lo guarda en una lista
-    	void carga_peliculas(const string, Lista<Pelicula*> &lista);
+    	void carga_peliculas(const string, Lista<Pelicula*>* &lista);
     	// Metodo separar actores
     	// PRE: Recibir un string
     	// POST: construye una lista con punteros a los actores y la guarda en el objeto 		//pelicula
@@ -31,7 +34,11 @@ public:
     	// Metodo cargar_lista_recomendadas
     	// PRE: lista_vistas y listas_no_vistas creadas
     	// POST: construye una lista con las peliculas recomendadas
-    	Lista<Pelicula*> carga_lista_recomendadas(Lista<Pelicula*> &lista_vistas, Lista<Pelicula*> &lista_no_vistas);
+    	Lista<Pelicula*>* carga_lista_recomendadas(Lista<Pelicula*>* &lista_vistas, Lista<Pelicula*>* &lista_no_vistas);
+	//
+	//
+	//
+	bool hay_excepcion();
     	// Destructor
     	// PRE: Ninguna
     	// POST: destruye el objeto

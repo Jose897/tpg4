@@ -54,6 +54,10 @@ public:
     // POST: libera el nodo que esta en la posicion pos
     // se toma 1 como el primero
     void borrar_dato(unsigned pos);
+    //
+    //
+    //
+    void asignar_dato(unsigned pos, Dato d);
 };
 
 template < typename Dato >
@@ -128,13 +132,20 @@ void Lista<Dato>::borrar_dato(unsigned pos)
         delete aux;
         tam--;
     }
-    int x = 0;
-    Dato d = obtener_dato(x);
-    while(d != NULL && !lista_vacia()){
-    	delete d;
-    	x++;
-    	d = obtener_dato(x);
-    }
+}
+
+template < typename Dato >
+void Lista<Dato>::asignar_dato(unsigned pos, Dato d){
+	Nodo<Dato>* aux;
+	aux = primero;
+	if( pos == 1){
+		aux->asignar_dato(d);
+	}else{
+		for(int i=1; i < pos ; i++){
+			aux=aux->obtener_siguiente();
+		}
+		aux->asignar_dato(d);
+	}
 }
 
 #endif //LISTA_H_

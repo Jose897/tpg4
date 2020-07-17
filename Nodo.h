@@ -44,38 +44,38 @@ public:
     Nodo* obtener_siguiente();
 
 };
-// Constructor con parametro
+
 template < typename Dato >
 Nodo<Dato>::Nodo(Dato d)
 {
     dato = d;
     psig = 0;
 }
-// Destructor
+
 template < typename Dato >
 Nodo<Dato>::~Nodo()
 {
-    // No hace nada
+    delete dato;
 }
-// Setear el dato
+
 template < typename Dato >
 void Nodo<Dato>::asignar_dato(Dato d)
 {
     dato = d;
 }
-// Setear el ptr al sig
+
 template < typename Dato >
 void Nodo<Dato>::asignar_siguiente(Nodo* ps)
 {
     psig = ps;
 }
-// Devolver el dato
+
 template < typename Dato >
 Dato Nodo<Dato>::obtener_dato()
 {
     return dato;
 }
-// Devolver el siguiente
+
 template < typename Dato >
 Nodo<Dato>* Nodo<Dato>::obtener_siguiente()
 {

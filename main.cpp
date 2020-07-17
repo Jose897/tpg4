@@ -6,6 +6,7 @@ const string NOMBRE_ARCHIVO_NO_VISTAS = "peliculas_no_vistas.txt";
 const string NOMBRE_ARCHIVO_VISTAS = "peliculas_vistas.txt";
 int main()
 {
+	//Jose
     Archivo carga;
     Lista<Pelicula*> lista_peliculas_vistas;
     Lista<Pelicula*> lista_peliculas_no_vistas;

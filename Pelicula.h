@@ -32,8 +32,8 @@ public:
     	// POST: Crea un objeto pelicula con todos los datos de la misma
     	Pelicula(string titulo, string genero, int puntaje, string director, Lista<string*>* );
 	//
-	//
-	//
+	//PRE: que el objeto este creado
+	//POST: elimina lo apuntado por lista_actores
 	~Pelicula();
     	// Metodo obtener titulo
     	// PRE: Ninguna

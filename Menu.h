@@ -25,13 +25,9 @@ class Menu{
         //PRE: lista creada y no vacia
         //POST: imprimir la lista por pantalla
         void imprimir_peliculas(Lista<Pelicula*>* &);
-	//
-	//
-	//
-	void borrar_lista(Lista<Pelicula*>* &);
-	//
-	//
-	//
+	//cambia el dato apuntado por uno base
+	//PRE: que la lista este creada y no vacia
+	//POST: le asigna un registro base
 	void asignar_null(Lista<Pelicula*>* &);
 
 };

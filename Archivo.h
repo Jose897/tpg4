@@ -36,8 +36,8 @@ public:
     	// POST: construye una lista con las peliculas recomendadas
     	Lista<Pelicula*>* carga_lista_recomendadas(Lista<Pelicula*>* &lista_vistas, Lista<Pelicula*>* &lista_no_vistas);
 	//
-	//
-	//
+	//PRE:
+	//POST: Devuelve tru en caso de que aya ocurrido una excepcion
 	bool hay_excepcion();
     	// Destructor
     	// PRE: Ninguna

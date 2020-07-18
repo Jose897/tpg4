@@ -54,9 +54,9 @@ public:
     // POST: libera el nodo que esta en la posicion pos
     // se toma 1 como el primero
     void borrar_dato(unsigned pos);
-    //
-    //
-    //
+    //cambia el dato
+    //PRE: Lista creada y no vacia
+    //POST: asigna el dato d en la posicion pos
     void asignar_dato(unsigned pos, Dato d);
 };
 

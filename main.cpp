@@ -2,8 +2,8 @@
 #include <string>
 #include "Menu.h"
 using namespace std;
-const string NOMBRE_ARCHIVO_NO_VISTAS = "peliculas_no_vistas.txt";
-const string NOMBRE_ARCHIVO_VISTAS = "peliculas_vistas.txt";
+const char* NOMBRE_ARCHIVO_NO_VISTAS = "peliculas_no_vistas.txt";
+const char* NOMBRE_ARCHIVO_VISTAS = "peliculas_vistas.txt";
 int main()
 {
     Archivo carga;

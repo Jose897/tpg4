@@ -9,8 +9,11 @@ using namespace std;
 
 class Menu{
 	private:
-		bool salir = true;
+		bool salir;
 	public:
+	//PRE:
+	//POST:crea el objeto con salida en true
+	Menu();
         // PRE: Recibe un numero entre 1 y 3
         // POST: Devuelve la opcion que selecciona el usuario
         void mostrar_menu(Lista<Pelicula*>* &, Lista<Pelicula*>* &, Lista<Pelicula*>* &);

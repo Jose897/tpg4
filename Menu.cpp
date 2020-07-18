@@ -1,5 +1,8 @@
 #include "Menu.h"
 
+Menu::Menu(){
+	salir=true;
+}
 
 void Menu::mostrar_menu(Lista<Pelicula*>* &lista_peliculas_vistas, Lista<Pelicula*>* &lista_peliculas_no_vistas, Lista<Pelicula*>* &lista_recomendadas){
 	int opcion;

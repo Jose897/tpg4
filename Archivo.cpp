@@ -25,13 +25,14 @@ bool Archivo::hay_excepcion(){
 	return excepcion;
 }
 
-void Archivo::carga_peliculas(const string nombre_archivo, Lista<Pelicula*>* &lista){
+void Archivo::carga_peliculas(const char* nombre_archivo, Lista<Pelicula*>* &lista){
     string titulo_pelicula;
     string director_pelicula;
     string genero_pelicula;
     string puntaje_pelicula;
     string actores_pelicula;
     string espacio;
+    //char*nombre_del_archivo=nombre_archivo[0];
     try{
     	ifstream archivo(nombre_archivo);
     	if(archivo.is_open()){

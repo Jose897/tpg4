@@ -19,9 +19,5 @@ int main()
     	menu.mostrar_menu(lista_peliculas_vistas, lista_peliculas_no_vistas, lista_recomendadas);
     }
 
-    delete lista_peliculas_vistas;
-    delete lista_peliculas_no_vistas;
-    delete lista_recomendadas;
-
     return 0;
 }

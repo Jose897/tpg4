@@ -35,8 +35,9 @@ void Menu::procesar_opcion(int opcion,Lista<Pelicula*>* &lista_peliculas_vistas,
 		case 3: imprimir_peliculas(lista_recomendadas); break;
 		case 4: salir = false ;
 			asignar_null(lista_recomendadas);
-			borrar_lista(lista_peliculas_vistas);
-			borrar_lista(lista_peliculas_no_vistas);
+			delete lista_peliculas_vistas;
+			delete lista_peliculas_no_vistas;
+			delete lista_recomendadas;
 			break;
 	}
 }
@@ -61,12 +62,6 @@ void Menu::asignar_null( Lista<Pelicula*>*&lista_recomendadas){
 	for (unsigned i = 1; i <= lista_recomendadas->obtener_tamanio(); i++){
 		Pelicula* nulo = new Pelicula();
 		lista_recomendadas->asignar_dato( i, nulo);
-	}
-}
-
-void Menu::borrar_lista(Lista<Pelicula*>*&lista){
-	for(unsigned i = 1; i <= lista->obtener_tamanio(); i++){
-		delete lista->obtener_dato(i)->obtener_actores();
 	}
 }
 

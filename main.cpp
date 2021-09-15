@@ -1,6 +1,7 @@
 #include "Archivo.h"
 #include <string>
 #include "Menu.h"
+/*Probando los pusheos*/
 using namespace std;
 const char* NOMBRE_ARCHIVO_NO_VISTAS = "peliculas_no_vistas.txt";
 const char* NOMBRE_ARCHIVO_VISTAS = "peliculas_vistas.txt";
